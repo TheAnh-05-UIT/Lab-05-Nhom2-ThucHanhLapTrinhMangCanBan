@@ -36,6 +36,7 @@
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.lblSignUp = new System.Windows.Forms.Label();
             this.linklblSignUp = new System.Windows.Forms.LinkLabel();
+            this.radioBtnHienThi = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -99,7 +100,7 @@
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Location = new System.Drawing.Point(148, 121);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '0';
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(194, 28);
@@ -144,11 +145,25 @@
             this.linklblSignUp.Text = "Sign up";
             this.linklblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblSignUp_LinkClicked);
             // 
+            // radioBtnHienThi
+            // 
+            this.radioBtnHienThi.AutoSize = true;
+            this.radioBtnHienThi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnHienThi.Location = new System.Drawing.Point(205, 155);
+            this.radioBtnHienThi.Name = "radioBtnHienThi";
+            this.radioBtnHienThi.Size = new System.Drawing.Size(127, 21);
+            this.radioBtnHienThi.TabIndex = 8;
+            this.radioBtnHienThi.TabStop = true;
+            this.radioBtnHienThi.Text = "Hiển thị mật khẩu";
+            this.radioBtnHienThi.UseVisualStyleBackColor = true;
+            this.radioBtnHienThi.CheckedChanged += new System.EventHandler(this.radioBtnHienThi_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 218);
+            this.Controls.Add(this.radioBtnHienThi);
             this.Controls.Add(this.linklblSignUp);
             this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.btnLogin);
@@ -174,5 +189,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.Label lblSignUp;
         private System.Windows.Forms.LinkLabel linklblSignUp;
+        private System.Windows.Forms.RadioButton radioBtnHienThi;
     }
 }

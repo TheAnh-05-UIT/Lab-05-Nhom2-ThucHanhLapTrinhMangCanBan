@@ -22,6 +22,13 @@ namespace Bai05_Lab05
         }
         private async void btnSignUp_Click(object sender, EventArgs e)
         {
+            string temp1 = txtPassword.Text;
+            string temp2 = guna2TextBox1.Text;
+            if(temp1 != temp2)
+            {
+                MessageBox.Show("Mật khẩu không khớp. Vui lòng kiểm tra lại.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
             string email = txtEmail.Text.Trim();
@@ -102,6 +109,15 @@ namespace Bai05_Lab05
             cobLanguage.SelectedIndex = -1;
             rabtnFemale.Checked = false;
             rabtnMale.Checked = false;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton1.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+                guna2TextBox1.PasswordChar = '\0';
+            }    
         }
     }
 }

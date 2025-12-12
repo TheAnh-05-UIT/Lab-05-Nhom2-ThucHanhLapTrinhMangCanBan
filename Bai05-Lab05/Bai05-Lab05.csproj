@@ -153,6 +153,12 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_RandomContribute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_RandomContribute.Designer.cs">
+      <DependentUpon>uc_RandomContribute.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Addfood.resx">
       <DependentUpon>Addfood.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +185,9 @@
     </Compile>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_RandomContribute.resx">
+      <DependentUpon>uc_RandomContribute.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -84,5 +84,13 @@ namespace Bai05_Lab05
             SignUp signUp = new SignUp();
             signUp.Show();
         }
+
+        private void radioBtnHienThi_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioBtnHienThi.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+        }
     }
 }

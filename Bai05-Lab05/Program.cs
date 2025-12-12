@@ -16,7 +16,7 @@ namespace Bai05_Lab05
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Contribute());
+            Application.Run(new Login());
         }
     }
 }

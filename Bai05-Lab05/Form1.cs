@@ -80,6 +80,7 @@ namespace Bai05_Lab05
                             await client.Inbox.AddFlagsAsync(uid, MessageFlags.Seen, true);
                             ++soMonAnMoi;
                         }
+                        await client.Inbox.AddFlagsAsync(uid, MessageFlags.Seen, true);
 
                     }
                     await client.DisconnectAsync(true);
@@ -158,7 +159,45 @@ namespace Bai05_Lab05
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
+            string sizeQuery = "SELECT COUNT(*) FROM MonAn";
+            SQLiteCommand cmd = new SQLiteCommand(sizeQuery, conn);
+            object result = cmd.ExecuteScalar();
+            int size = 0;
+            if (result != null)
+            {
+                size = Convert.ToInt32(result);
+            }
+            else
+            {
+                size = 1;
+            }
+            Random rnd = new Random();
+            int randomId = rnd.Next(1, size + 1);
+            string selectQuery = "SELECT * FROM MonAn WHERE Id = @id";
+            SQLiteCommand selectCmd = new SQLiteCommand(selectQuery, conn);
+            selectCmd.Parameters.AddWithValue("@id", randomId);
+           // UserControl f = new UserControl();
 
+            SQLiteDataAdapter da = new SQLiteDataAdapter(selectCmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            uc_RandomContribute uc = new uc_RandomContribute();
+            uc.LoadData(dt);
+            var popupForm = new Form
+            {
+                Text = "Món ăn gợi ý ngẫu nhiên",
+                Size = new Size(800, 300),
+                StartPosition = FormStartPosition.CenterParent,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                MaximizeBox = false,
+                MinimizeBox = false
+            };
+            uc.Dock = DockStyle.Fill;
+            uc.BackColor = Color.LightYellow;
+
+            popupForm.Controls.Add(uc);
+            popupForm.ShowDialog();
+            //dgvData.DataSource = dt;
         }
     }
 }
