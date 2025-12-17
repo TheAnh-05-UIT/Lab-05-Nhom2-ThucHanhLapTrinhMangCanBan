@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bai04_Lab05
+namespace Bai04_Lab04
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Bai04_Lab05
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormMain());
         }
     }
 }

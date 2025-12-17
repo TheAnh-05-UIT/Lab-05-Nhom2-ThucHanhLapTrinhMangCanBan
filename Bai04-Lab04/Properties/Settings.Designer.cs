@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bai04_Lab05.Properties
+namespace Bai04_Lab04.Properties
 {
 
 
